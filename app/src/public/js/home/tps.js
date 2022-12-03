@@ -60,7 +60,7 @@ const getResult = () => {
   resultDisplayElement.style.display = "block";
   wordDisplayElement.style.display = "none";
   wordInputElement.style.display = "none";
-  let result = `${errCnt} wrong word, \n typing speed: ${wpm}wpm`;
+  let result = `${errCnt} wrong word, \n typing speed: ${wpm}wpm, \n alphabetTimeTable(1/1000): ${alphabetTimeTable}`;
   resultDisplayElement.innerHTML = result;
 };
 

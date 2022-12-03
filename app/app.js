@@ -2,8 +2,11 @@
 
 //modules
 const express = require("express");
-const app = express();
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
 
+const app = express();
 //routing
 const home = require("./src/routes/home");
 
@@ -13,5 +16,10 @@ app.set("view engine", "ejs");
 app.use(express.static(`${__dirname}/src/public`));
 
 app.use("/", home);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.json);
+
+
 
 module.exports = app;
